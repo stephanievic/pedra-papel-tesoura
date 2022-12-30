@@ -1,4 +1,4 @@
-## Pedra, papel ou tesoura com JavaScript ✂
+# Pedra, papel ou tesoura com JavaScript ✂
 Jogo online feito como projeto de estudo.
 
 ### Como funciona
