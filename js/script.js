@@ -5,13 +5,18 @@ const paper = document.querySelector("#paper");
 const rock = document.querySelector ("#rock");
 const scissors = document.querySelector("#scissors");
 
-let userPoints = 0, compPoints = 0, compChoice = 0;
+let userPoints = 0, compPoints = 0, compChoice;
 
 function compOption () {
     const options = ["pedra", "papel", "tesoura"];
     let randomOption = Math.floor(Math.random () * 3);
 
     return compChoice = options[randomOption];
+}
+
+function changeScore (){
+    scoreUser.innerHTML = `${userPoints}`;
+    scoreComp.innerHTML = `${compPoints}`;
 }
 
 function game (userChoice){
@@ -40,7 +45,7 @@ function game (userChoice){
         case "tesoura":
             if (compChoice == "papel"){
                 resultMessage.innerHTML = "<h1> Você ganhou!! </h1> <p> Você escolheu tesoura, e o computador escolheu papel.";
-                userPoints++;
+                userPoints ++;
             }
 
             else if (compChoice == "pedra") {
@@ -71,11 +76,6 @@ function game (userChoice){
     changeScore();
 }
 
-function changeScore (){
-    scoreUser.innerHTML = `${userPoints}`;
-    scoreComp.innerHTML = `${compPoints}`;
-}
-
 paper.addEventListener("click", () => {
     game("papel");
 });
@@ -91,5 +91,4 @@ scissors.addEventListener("click", () => {
 refreshBtn.addEventListener ("click", ()=> {
     location.reload();
 })
-
 
