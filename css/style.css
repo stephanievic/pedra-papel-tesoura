@@ -51,10 +51,6 @@ header > .scores {
     cursor: pointer;
 }
 
-#game > button:focus {
-    border: 15px solid #5c96b8e7;
-}
-
 .result {
     display: flex;
     align-items: center;

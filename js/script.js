@@ -1,5 +1,6 @@
 let scoreUser = document.querySelector("#scoreUser");
 let scoreComp= document.querySelector("#scoreComputer");
+const refreshBtn = document.querySelector("#refresh");
 const paper = document.querySelector("#paper");
 const rock = document.querySelector ("#rock");
 const scissors = document.querySelector("#scissors");
@@ -44,7 +45,6 @@ function game (userChoice){
 
             else if (compChoice == "pedra") {
                 resultMessage.innerHTML = "<h1> Você perdeu! :( </h1> <p> Você escolheu tesoura, e o computador escolheu pedra.";
-                changeBorder()
                 compPoints ++;
             }
 
@@ -58,7 +58,6 @@ function game (userChoice){
 
             else if (compChoice == "tesoura"){
                 resultMessage.innerHTML = "<h1> Você perdeu! :( </h1> <p> Você escolheu papel, e o computador escolheu tesoura."; 
-                changeBorder();
                 compPoints ++;
             }
 
@@ -67,7 +66,8 @@ function game (userChoice){
 
     resultMessage.classList.add("result");
     resultMessage.classList.remove("hide");
-    
+    refreshBtn.classList.remove("hide");
+
     changeScore();
 }
 
@@ -86,6 +86,10 @@ rock.addEventListener("click", () => {
 
 scissors.addEventListener("click", () => {
     game("tesoura");
+});
+
+refreshBtn.addEventListener ("click", ()=> {
+    location.reload();
 })
 
 
